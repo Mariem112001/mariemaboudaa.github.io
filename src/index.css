@@ -1,0 +1,297 @@
+@import '@fontsource/sora/400.css';
+@import '@fontsource/sora/500.css';
+@import '@fontsource/sora/600.css';
+@import '@fontsource/sora/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors - Light pastel theme */
+    --background: 0 0% 96%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 89%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Primary - Deep blue */
+    --primary: 243 75% 58%;
+    --primary-foreground: 225 100% 96%;
+
+    /* Secondary - Light blue */
+    --secondary: 0 0% 32%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 63%;
+    --muted-foreground: 0 0% 9%;
+
+    /* Accent - Sky blue */
+    --accent: 250 100% 97%;
+    --accent-foreground: 258 89% 66%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 0 0% 83%;
+    --input: 0 0% 83%;
+    --ring: 243 75% 58%;
+
+    --radius: 1.25rem;
+
+    /* Custom portfolio colors */
+    --navy: 220 50% 15%;
+    --navy-light: 220 40% 25%;
+    --blue-primary: 205 75% 42%;
+    --blue-medium: 210 55% 55%;
+    --blue-light: 207 70% 82%;
+    --blue-pale: 210 60% 94%;
+    --pastel-pink: 340 50% 95%;
+    --pastel-mint: 160 40% 94%;
+    --pastel-lavender: 260 40% 95%;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.3;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(205 75% 42%) 0%, hsl(210 55% 55%) 50%, hsl(207 70% 82%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 60% 94%) 0%, hsl(260 40% 95%) 50%, hsl(340 50% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 60% 98%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(220 50% 15%) 0%, hsl(220 40% 25%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 40px hsl(205 75% 42% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 243 75% 58%;
+    --sidebar-primary-foreground: 225 100% 96%;
+    --sidebar-accent: 0 0% 32%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 83%;
+    --sidebar-ring: 243 75% 58%;
+    --chart-1: 234 89% 73%;
+    --chart-2: 255 91% 76%;
+    --chart-3: 270 95% 75%;
+    --chart-4: 238 83% 66%;
+    --chart-5: 0 0% 45%;
+    --sidebar: 0 0% 98%;
+    --font-sans: 'Lato', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'EB Garamond', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 25%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 234 89% 73%;
+    --primary-foreground: 243 47% 20%;
+
+    --secondary: 0 0% 45%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 45%;
+    --muted-foreground: 0 0% 98%;
+
+    --accent: 261 72% 22%;
+    --accent-foreground: 255 91% 76%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 0 0% 32%;
+    --input: 0 0% 32%;
+    --ring: 234 89% 73%;
+
+    --navy: 220 50% 90%;
+    --navy-light: 220 40% 75%;
+    --glass-bg: 220 30% 12% / 0.8;
+    --glass-border: 220 30% 25% / 0.5;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 8%) 0%, hsl(220 30% 12%) 50%, hsl(220 35% 15%) 100%);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 234 89% 73%;
+    --sidebar-primary-foreground: 243 47% 20%;
+    --sidebar-accent: 255 91% 76%;
+    --sidebar-accent-foreground: 261 72% 22%;
+    --sidebar-border: 0 0% 32%;
+    --sidebar-ring: 234 89% 73%;
+    --chart-1: 229 93% 81%;
+    --chart-2: 252 94% 85%;
+    --chart-3: 269 97% 85%;
+    --chart-4: 234 89% 73%;
+    --chart-5: 0 0% 45%;
+    --sidebar: 0 0% 14%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-md rounded-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-blue-medium to-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                var(--gradient-primary) border-box;
+    border: 2px solid transparent;
+  }
+
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(205 75% 42% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(205 75% 42% / 0.5);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-floating {
+  animation: floating 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
